@@ -1,1 +1,35 @@
-.w3-top+main{padding-top:4em}main{padding:2em}.parallax{background-attachment:fixed;background-position:50%;background-repeat:no-repeat;background-size:cover}.parallax-main{background-image:url(/images/prlx-bck-main.jpg?d5a0df1844de9c9feafcc192a8c96b88)}.header-text{background-color:hsla(0,0%,100%,.6)}.form{min-width:30%;max-width:50%;margin:auto}@media screen and (max-width:600px){.form{max-width:100%}}
+.w3-top + main {
+  padding-top: 4em;
+}
+
+main {
+  padding: 2em;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-main {
+  background-image: url(/images/prlx-bck-main.jpg?006cf95019d0c651e93df2a4f05da9f8);
+}
+
+.header-text {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form {
+  min-width: 30%;
+  max-width: 50%;
+  margin: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    max-width: 100%;
+  }
+}
+

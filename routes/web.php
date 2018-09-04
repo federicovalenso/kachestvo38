@@ -1,5 +1,7 @@
 <?php
 
+use App\Slider;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +16,20 @@ Route::auth();
 Route::get(
     '/',
     function () {
-        return view('home');
+        return view(
+            'home',
+            ['sliders' => json_encode(Slider::all())]
+        );
     }
-);
+)->name('home');
 Route::get(
     'contacts/',
     function () {
         return view('contacts');
     }
-);
+)->name('contacts');
 Route::get('products/{category}', 'ProductController@index');
+Route::redirect('price', 'products/1', 301);
 Route::redirect('used', 'products/2', 301);
 Route::group(
     [

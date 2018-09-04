@@ -8,10 +8,17 @@
 require('./bootstrap');
 
 window.menuToggle = function() {
-    var x = document.getElementById("nav");
+    let x = document.getElementById("nav");
     if (x.className.indexOf("w3-show") == -1) {
         x.className += " w3-show";
     } else { 
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+window.Vue = require('vue');
+Vue.component('slider-component', require('./components/SliderComponent.vue'));
+
+const app = new Vue({
+    el: "#app"
+});
