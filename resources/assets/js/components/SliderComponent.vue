@@ -1,5 +1,12 @@
 <style>
     .slide-caption {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
         background-color: rgba(255,255,255,0.7);
         text-align: center;
         font-weight: bold;
@@ -8,12 +15,12 @@
     }
     @media screen and (max-width: 600px) {
         .slide-caption {
-            font-size: 0.8em;
+            font-size: 1em;
         }
     }
     @media screen and (max-width: 320px) {
         .slide-caption {
-            font-size: 0.5em;
+            font-size: 0.7em;
         }
     }
     .arrow-button {
@@ -25,8 +32,8 @@
     <div class="w3-content w3-display-container">
         <div class="w3-display-container w3-animate-fading mySlides" v-for="slider in sliders">
             <img v-bind:src="slider.filename" style="width:100%; max-height:420px;">
-            <div class="w3-display-middle w3-container w3-padding-16 slide-caption">
-                {{slider.caption}}
+            <div class="w3-container w3-padding-16 slide-caption">
+                <span>{{slider.caption}}</span>
             </div>
         </div>
         <div class="w3-center w3-large w3-display-middle" style="width:100%">

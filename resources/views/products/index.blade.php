@@ -20,6 +20,7 @@
         @endforeach
         </tbody>
     </table>
+    {{ $products->links('pagination.w3') }}
     @endif
 
 </div>

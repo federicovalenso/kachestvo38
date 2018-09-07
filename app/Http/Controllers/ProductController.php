@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         return view(
             'products.index',
-            ['products' => Product::where('category_id', $category)->get()]
+            ['products' => Product::where('category_id', $category)->paginate(15)]
         );
     }
 }

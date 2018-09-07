@@ -35,7 +35,8 @@ Route::group(
     [
         'name' => 'admin.',
         'prefix' => 'admin',
-        'namespace' => 'Admin'
+        'namespace' => 'Admin',
+        'middleware' => 'auth'
     ],
     function () {
         Route::get('products/', 'AdminProductController@index')->name('products.index');
