@@ -31,18 +31,7 @@
 <main class="w3-container">
   @yield('content')
 </main>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-8">
-    <a href="https://vk.com/kachestvoangarsk">
-      <i class="fab fa-vk w3-hover-opacity"></i>
-    </a>
- </div>
- <div class="w3-medium w3-padding-8">
-    <i class="fas fa-power-off w3-hover-opacity"></i><span> Powered by </span><a href="https://laravel.com/"><i class="fab fa-laravel w3-hover-opacity"></i></a>, <a href="https://www.w3schools.com/w3css/default.asp"><span> W3.CSS</span></a>
- </div>
-</footer>
+@include('layouts.footer')
 
 <script src="{{ asset('js/app.js') }}"></script>
 

@@ -27,9 +27,25 @@ main
     max-width: 50%;
     margin: auto;
 }
+.center
+{
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#adminSidebar
+{
+    display:none;
+    z-index:2;
+    min-width: 250px;
+}
 @media screen and (max-width: 600px)
 {
     .form
+    {
+        max-width: 100%;
+    }
+    .center
     {
         max-width: 100%;
     }

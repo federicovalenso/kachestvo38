@@ -3,24 +3,23 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
+use App\Role;
 
-class RedirectIfAuthenticated
+class EnsureRole
 {
     /**
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  $guard
+     * @param  string $role
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle($request, Closure $next, string $role)
     {
-        if (Auth::guard($guard)->check()) {
-            return redirect('/');
+        if ($request->user()->hasRole($role) != true) {
+            return redirect('login');
         }
-
         return $next($request);
     }
 }

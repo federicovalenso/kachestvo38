@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('admin.index')
 
 @section('content')
 <h1 class="w3-center">Редактировать услугу</h1>

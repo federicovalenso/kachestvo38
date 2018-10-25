@@ -36,14 +36,28 @@ Route::group(
         'name' => 'admin.',
         'prefix' => 'admin',
         'namespace' => 'Admin',
-        'middleware' => 'auth'
+        'middleware' => ['auth', 'role:admin']
     ],
     function () {
+        Route::get(
+            '/',
+            function () {
+                return view(
+                    'admin.index'
+                );
+            }
+        );
         Route::get('products/', 'AdminProductController@index')->name('products.index');
         Route::get('products/edit/{product}', 'AdminProductController@edit')->name('products.edit');
         Route::get('products/create/', 'AdminProductController@create')->name('products.create');
         Route::post('products/', 'AdminProductController@store')->name('products.store');
         Route::patch('products/{product}', 'AdminProductController@update')->name('products.update');
-        Route::delete('products/{category}/{id}', 'AdminProductController@delete')->name('products.delete');
+        Route::delete('products/{category}', 'AdminProductController@delete')->name('products.delete');
+        Route::get('categories/', 'AdminCategoryController@index')->name('categories.index');
+        Route::get('categories/edit/{category}', 'AdminCategoryController@edit')->name('categories.edit');
+        Route::get('categories/create/', 'AdminCategoryController@create')->name('categories.create');
+        Route::post('categories/', 'AdminCategoryController@store')->name('categories.store');
+        Route::patch('categories/{category}', 'AdminCategoryController@update')->name('categories.update');
+        Route::delete('categories/{category}', 'AdminCategoryController@delete')->name('categories.delete');
     }
 );
